@@ -1,0 +1,89 @@
+html{
+    box-sizing: border-box;
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+/*Globales*/
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.contenedor{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+img{
+    max-width: 100%;
+}
+
+
+/**Header y Navegacion**/
+.nombre-sitio span{
+    color:blue;
+}
+
+.contenedor-navegacion{
+    border-top: 1px solid #e1e1e1;
+}
+
+.nombre-sitio{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.nav-principal{ 
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+
+    /*atajos:
+    border: ancho tipo-de-border color-de-border
+    margin y padding: margin-top margin-right margin-bottom margin-left
+    */
+}
+
+.hero{
+    background-image: url("../images/principal.jpg");
+    background-repeat: no-repeat;/*Para que la imagen no se repita a lo ancho*/
+    background-size: cover; /*Para que tome todo el espacio disponible*/
+    height: 550px;
+}
+
+/***Categorias***/
+.listado-categorias{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:20px; /*Sepracion entre elementos*/
+}   
+
+
+/** Box Model 
+.sobre-nosotros{
+    background-color: red;
+    width: 200px;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+
+si quisiera elegir el primer elemento de una lista
+usaria los siguiente pseudo selectores
+
+nav a:first-child{}
+
+nav a:first-of-type{}
+
+nav a:nth-child(1) aqui elijo segun el numero posicional
+
+Si quisiera el ultimo
+
+nav a:last-child{}
+
+nav a:last-of-type{}
+*/
+
+/*Especificidad */
