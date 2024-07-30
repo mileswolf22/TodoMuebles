@@ -299,6 +299,6 @@ Sobre Nosotros en Grid
 
 }
 
-.footer-categoria{
-
+.navegacion{
+    display: grid;
 }
