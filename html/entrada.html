@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contacto</title>
+    <title>TodoMuebles - Entrada</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -36,82 +36,56 @@
     </div>
 
     <main class="contenido-principal contenedor">
-      <h2 class="text-center">Contacto</h2>
+      <h2 class="text-center">Entrada Blog</h2>
 
-      <form class="formulario">
-        <fieldset>
-          <legend>Tus Datos</legend>
-          <div class="campo">
-            <label for="nombre">Nombre: </label>
-            <input  id="nombre" type="text" placeholder="Nombre" />
-          </div>
+      <article class="entrada contenido-entrada-blog">
+        <h2>Guía de Colores</h2>
+
+        <div class="imagen">
+          <img src="../images/nosotros.jpg" alt="imagen blog" />
+        </div>
+
+        <div class="entrada-meta">
+          <p>Fecha: <span>31 de Octubre del 2022</span></p>
+          <p>Escrito por: <span>Bryan Nava</span></p>
+        </div>
+
+        <div class="entrada-blog">
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Veritatis, delectus laborum optio nisi deserunt ullam, nesciunt
+            exercitationem rem, vel magnam esse qui eligendi. Itaque labore
+            optio fugit a numquam architecto.
+          </p>
+
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Veritatis, delectus laborum optio nisi deserunt ullam, nesciunt
+            exercitationem rem, vel magnam esse qui eligendi. Itaque labore
+            optio fugit a numquam architecto.
+          </p>
+
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Veritatis, delectus laborum optio nisi deserunt ullam, nesciunt
+            exercitationem rem, vel magnam esse qui eligendi. Itaque labore
+            optio fugit a numquam architecto.
         
-          <div class="campo">
-            <label for="asunto">Asunto: </label>
-            <input  id="asunto" type="text" placeholder="Asunto" />
-          </div>
-
-          <div class="campo">
-            <label for="email">E-mail: </label>
-            <input  id="email" type="email" placeholder="Email" />
-          </div>
-
-          <div class="campo">
-            <label for="telefono">Telefono: </label>
-            <input  id="telefono" type="tel" placeholder="Telefono" />
-          </div>
-
-          <div class="campo">
-            <label for="mensaje">Mensaje: </label>
-            <textarea  rows="10" columns="10"></textarea> 
-          </div>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Veritatis, delectus laborum optio nisi deserunt ullam, nesciunt
+            exercitationem rem, vel magnam esse qui eligendi. Itaque labore
+            optio fugit a numquam architecto.
+          </p>
           
-        </fieldset>
-
-        <fieldset>
-            <legend>País</legend>
-            <div class="campo">
-              <label for="pais">País: </label>
-              <select id="pais">
-                <option disabled="">>-- Seleccione --<</option>
-                <option>México</option>
-                <option>Perú</option>
-                <option>Colombia</option>
-                <option>Argentina</option>
-                <option>España</option>
-                <option>Chile</option>
-              </select>
-            </div>
-        </fieldset>
-
-        <fieldset>
-            <legend>Información Extra</legend>
-            <div class="campo">
-              <label for="cliente">Cliente: </label>
-              <input id="cliente" type="radio" name="tipo" value="cliente">
-            </div>
-
-            <div class="campo">
-              <label for="proveedor">Proveedor: </label>
-              <input id="proveedor" type="radio" name="tipo" value="proveedor">
-            </div>
-
-            <div class="campo">
-              <label for="categoria">Categoría de Interés</label>
-              <input list="categorias" name="categorias">
-              <datalist id="categorias">
-                <option value="Exterior">
-                <option value="Interior">
-                <option value="Cocina">
-                <option value="Recamara">
-              </datalist>
-            </div>
-
-        </fieldset>
-
-        <input class="btn" type="submit" value="Enviar formulario">
-      </form>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Veritatis.
+          </p>
+        </div>
+      </article>
     </main>
+
+    
 
     <footer class="site-footer contenedor-linea-superior">
       <div class="text-center">
