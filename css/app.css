@@ -37,16 +37,37 @@ body{
 
 h1, h2, h3{
     font-family: 'Playfair Display', serif;
-    margin: 0 0 5rem 0;
+    margin: 0 0 2rem 0;
 }
+
 h1{
-    font-size: 5rem;
+    font-size: 3.8rem;
 }
+
+@media (min-width: 768px){ 
+    h1{
+        font-size: 5rem;
+    }
+}
+
 h2{
-    font-size: 4rem;
+    font-size: 3.2rem;
 }
+
+@media (min-width: 768px){ 
+    h2{
+        font-size: 4rem;
+    }
+}
+
 h3{
-    font-size: 3rem;
+    font-size: 2.4rem;
+}
+
+@media (min-width: 768px){ 
+    h3{
+        font-size: 3rem;
+    }
 }
 
 
@@ -70,12 +91,19 @@ h3{
     padding: 1rem;
     text-align: center;
     border: none;
+    width: 100%
 }
 
 .btn:hover{
     background-color: #769c02;
     transition: background-color .3s ease-out;
     cursor: pointer;
+}
+
+@media (min-width: 768px){ 
+    .btn{
+        width: auto;
+    }
 }
 
 /**Header y Navegacion**/
@@ -95,12 +123,19 @@ h3{
 .nav-principal{ 
     padding: 2rem 0;
     display: flex;
-    justify-content: space-between;
-
+    flex-direction: column;
+    align-items: center;
     /*atajos:
     border: ancho tipo-de-border color-de-border
     margin y padding: margin-top margin-right margin-bottom margin-left
     */
+}
+
+@media (min-width: 768px){ 
+    .nav-principal{
+        justify-content: space-between;
+        flex-direction: row;
+    }
 }
 
 .hero{
@@ -108,14 +143,31 @@ h3{
     background-repeat: no-repeat;/*Para que la imagen no se repita a lo ancho*/
     background-size: cover; /*Para que tome todo el espacio disponible*/
     background-position: center center;/*Par mover y modificar la posicion del contenido de la clase Hero*/
-    height: 55rem;
+    height: 25rem;
+}
+
+@media (min-width: 768px){
+    .hero{
+        height: 55rem;
+    } 
 }
 
 /***Categorias***/
 .categorias{
-    padding-top: 5rem;
+    padding: 5rem 0;
 }
 
+.categoria img{
+    width: 100%;
+}
+.categoria{
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px){ 
+    .categoria{
+        margin-bottom: 0;
+    }
+}
 .categoria a{
     text-align: center;
     display: block;
@@ -130,12 +182,13 @@ h3{
     font-weight: bold;
 }
 
-.listado-categorias{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap:2rem; /*Sepracion entre elementos*/
-}   
-
+@media (min-width: 768px){ 
+    .listado-categorias{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap:2rem; /*Sepracion entre elementos*/
+    }   
+}
 
 /** Box Model 
 .sobre-nosotros{
@@ -166,29 +219,57 @@ nav a:last-of-type{}
 
 /*Bloque nosotros*/
 .sobre-nosotros{
-    background-image: linear-gradient(to right, transparent 50%,
-     #037bc0 50%, #037bc0 100%), url("../images/nosotros.jpg");
+    background-image: linear-gradient(to bottom, transparent 50%,
+    #037bc0 50%, #037bc0 100%), url("../images/nosotros.jpg");
     /*Degredado lineal
         La primera parte indicia hacia donde se movera
         La segunda parte se planeta como se realizara el degradado
     */
-    margin-top: 5rem;
-    padding: 10rem 0;
     background-repeat: no-repeat;
-    background-size: 100%,/*linear gradient*/ 120rem /*imagen*/;
-    background-position: left center;
+    background-size: 100%,/*linear gradient*/ 70rem /*imagen*/;
+    background-position: center, top left;
+}
+
+
+@media (min-width: 768px){ 
+    .sobre-nosotros{
+        background-image: linear-gradient(to right, transparent 50%,
+        #037bc0 50%, #037bc0 100%), url("../images/nosotros.jpg");
+        /*Degredado lineal
+            La primera parte indicia hacia donde se movera
+            La segunda parte se planeta como se realizara el degradado
+        */
+        padding: 10rem 0;
+        background-size: 100%,/*linear gradient*/ 160rem /*imagen*/;
+        background-position: left center;
+    }
 }
 
 /*Sobre Nosotros en Flexbox*/
 .sobre-nosotros-grid{
-    display: flex;
-    justify-content: flex-end;
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
 }
 
+@media (min-width: 768px){ 
+    .sobre-nosotros-grid{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: unset;
+        gap: 10rem;
+    }
+}
+
+
 .texto-nosotros{
-    flex-basis: 50%;/*Ancho del elemento*/
-    padding-left: 10rem;
+    grid-row: 2/3;/*Ancho del elemento*/
     color: #fff;
+    padding: 5rem;
+}
+
+@media (min-width: 768px){ 
+    .texto-nosotros{
+        grid-column: 2/3;/*Ancho del elemento*/
+    }
 }
 
 /*
@@ -211,59 +292,72 @@ Sobre Nosotros en Grid
 .contenido-principal{
     padding-top: 5rem;
 }
-
-.listado-productos{
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    /*column-gap: 2rem;
-    row-gap: 2rem;*/
-    gap: 2rem;
-    padding-bottom: 5rem;
-}
-
-.producto:nth-child(1){
-    grid-column: 1 / 7;
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-}
-
-.producto:nth-child(1) img{
-    height: 43rem;
-    width: 100%;
-    object-fit: cover;
-}
-
-
-.producto:nth-child(2){
-    grid-column: 1 / 4;
-}
-
-.producto:nth-child(2) img,
-.producto:nth-child(3) img{
-    height: 30rem;
-    width: 100%;
-    object-fit: cover;
-}
-
-
-.producto:nth-child(3){
-    grid-column: 4 / 7;
-}
-
-.producto:nth-child(4){
-    grid-column: 1 / 3;
-}
-
-.producto:nth-child(5){
-    grid-column: 3 / 5;
-}
-
-.producto:nth-child(6){
-    grid-column: 5 / 7;
+@media (min-width: 768px){ 
+    .listado-productos{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        /*column-gap: 2rem;
+        row-gap: 2rem;*/
+        gap: 2rem;
+        padding-bottom: 5rem;
+    }
+    
+    .producto:nth-child(1){
+        grid-column: 1 / 7;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+    
+    .producto:nth-child(1) img{
+        height: 43rem;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    
+    .producto:nth-child(2){
+        grid-column: 1 / 4;
+    }
+    
+    .producto:nth-child(2) img,
+    .producto:nth-child(3) img{
+        height: 30rem;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    
+    .producto:nth-child(3){
+        grid-column: 4 / 7;
+    }
+    
+    .producto:nth-child(4){
+        grid-column: 1 / 3;
+    }
+    
+    .producto:nth-child(5){
+        grid-column: 3 / 5;
+    }
+    
+    .producto:nth-child(6){
+        grid-column: 5 / 7;
+    }
+    
 }
 
 .producto{
     background-color: #037bc0;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px){
+    .producto{
+        margin-bottom: 0;
+    }
+}
+
+.producto:last-of-type{
+    margin-bottom: 0;
 }
 
 .texto-producto{
@@ -298,16 +392,14 @@ Sobre Nosotros en Grid
 .site-footer{
     padding-top: 5rem;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
     gap: 2rem;
 }
 
-.site-footer p{
-    display: block;
-}
-
 .navegacion{
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .copyright{
@@ -315,62 +407,99 @@ Sobre Nosotros en Grid
     text-align: center;
 }
 
-.contenido-nosotros{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    column-gap: 4rem;
+@media (min-width: 768px){ 
+    .site-footer{
+        padding-top: 5rem;
+        display: grid;
+        grid-template-rows: unset;
+        grid-template-columns: repeat(3,1fr);
+        gap: 2rem;
+    }
 }
+    .site-footer p{
+        display: block;
+    }
+    
+    .navegacion{
+        display: grid;
+    }
+    
+    .copyright{
+        padding-top: 5rem;
+        text-align: center;
+    }
+    
+    .contenido-nosotros{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        gap: 4rem;
+        margin-bottom: 5rem;
+    }
+    
+    .informacion-nosotros{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5rem;
+        font-size: 2rem;
+    }
 
-.informacion-nosotros{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+    @media (min-width: 768px){ 
+        .informacion-nosotros{
+            padding: 0;
+    }
+    }
+    /*BLOG*/
 
-/*BLOG*/
+    
+    
+    
 
-.contenedor-blog{
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    column-gap: 4rem;
-}
-
-.entrada{
-    border-bottom: 2px solid #e1e1e1e1;
-    padding-bottom: 4rem;
-    margin-bottom: 2rem;
-}
-
-.entrada:last-of-type{
-    /*Para eliminar el borde en el ultimo elemento de la clase entrada*/
-    border: none;
-}
-
-.entrada-meta{
-    display:flex;
-    justify-content: space-between;
-}
-
-.entrada-meta p{
-    font-weight: 700;
-    justify-content: center;
-}
-
-.entrada-meta span{
-    color: #037BC0;
-}
-
-.contenido-entrada-blog{
-    width: 60rem;
-    margin: 0 auto;
-}
+    @media (min-width: 768px){ 
+        .contenedor-blog{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            column-gap: 4rem;
+        }
+        
+        .entrada{
+            border-bottom: 2px solid #e1e1e1e1;
+            padding-bottom: 4rem;
+            margin-bottom: 2rem;
+        }
+        
+        .entrada:last-of-type{
+            /*Para eliminar el borde en el ultimo elemento de la clase entrada*/
+            border: none;
+        }
+        
+        .entrada-meta{
+            display:flex;
+            justify-content: space-between;
+        }
+        
+        .entrada-meta p{
+            font-weight: 700;
+            justify-content: center;
+        }
+        
+        .entrada-meta span{
+            color: #037BC0;
+        }
+        
+        .contenido-entrada-blog{
+            width: 60rem;
+            margin: 0 auto;
+        }
+    }
 
 
 /*Galeria*/
 .galeria{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2em;
     list-style: none;
     padding: 0;
@@ -378,6 +507,11 @@ Sobre Nosotros en Grid
     list-style: none;
 }
 
+@media (min-width: 768px){ 
+    .galeria{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 .galeria img{
     width: 40rem;
     height: 40rem;
